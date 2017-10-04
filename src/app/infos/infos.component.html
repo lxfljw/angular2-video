@@ -1,0 +1,22 @@
+<!-->定义类型为app-infos，样式中flaot为右边，高度为：200px，宽度为300px<-->
+<div class="app-infos" style='flaot:right; width:330px; height:200px;'>
+<!-->判断变脸data是否为零，若不为零则进行下面的操作<-->
+    <div *ngIf="data">
+    	<!-->定义内容为3号字且加粗，内容为数据data中的街道名和街道的标记<-->	
+   		<h3><b>{{data.streetName}} - {{data.streetMarker}}</b></h3>
+   		<!-->定义4号字的内容为Restrictions<-->
+  		<h4>Restrictions</h4>
+		<!-->循环判断并是数据的signPlates给入signPlate<-->
+	   	<tr *ngFor="let signPlate of data.signPlates">
+	      	<div> {{signPlate.Sign}} </div>
+	    </tr>
+
+      	<h4>Parking Events</h4>
+
+	    <tr *ngFor="let sensor of data.sensors">
+	      	<div> {{sensor.arrivalDateTime}} </div>
+	    </tr>
+
+    </div> 	
+	
+</div>

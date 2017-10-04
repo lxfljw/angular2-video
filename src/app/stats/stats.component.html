@@ -1,0 +1,56 @@
+<p-calendar [(ngModel)]="value"></p-calendar>
+<div class=".stats-grid">
+	<div class="col-1-2">
+		<h1>
+			Parking Events
+		</h1>
+		<div *ngIf="_collection">
+			<h4>
+				<tr >
+					{{_collection.parkingEvents}}
+				</tr>
+			</h4>
+		</div>	
+	</div>
+
+	<div class="col-1-2">
+		<h1>
+			Parking Violations
+		</h1>
+		<div *ngIf="_collection">
+			<h4>
+				<tr >
+					{{_collection.parkingViolations}}
+				</tr>
+			</h4>
+		</div>
+	</div>
+
+</div>
+
+
+<!-->
+<div class="app-Stats" style='flaot:right; width:330px; height:200px;'>
+
+    <div *ngIf="_collection">
+	    <div class="col-1-2">
+	    	<h1>
+				Parking Events
+			</h1>	
+	   		<h3>
+	   			<div>{{_collection.parkingEvents}}</div>
+	   		</h3>
+	   	</div>
+	   	<div class="col-1-2">
+			<h1>
+				Parking Violations
+			</h1>
+			<h3>
+				<div>{{_collection.parkingViolations}}</div>
+
+			</h3>
+
+		</div>
+	</div>
+</div>
+<!-->

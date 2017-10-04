@@ -1,0 +1,86 @@
+<h2>
+ <p>系统未检测到您有车辆在停车场中，<br>您可以：</p>
+    <a href="car">
+        <button class="fluid ui button botton-white">新增车辆</button>
+    </a>
+
+    <p>系统检测到您有<span id="CarNumber">{{carCount}}</span>辆车在停车场中，<br>请选择付费车辆：</p>
+    {{carLicenses}} 
+    <a href="#" class="payChoice-link">  
+        <form action="/users/pay" method="post">
+            <input type="hidden" name="detail_data" value="{json_data}">
+        </form>
+        <button class="fluid ui button botton-white">{{plate_no}}</button>
+    </a>
+    {{carLicenses}}
+
+
+
+
+<div class="item">
+    <div class="content">
+        <div class="title">进场时间</div>
+        <div class="value">{{entranceTimeStamp}} </div>
+    </div>
+</div>
+
+<div class="item">
+    <div class="content">
+        <div class="title">停车时长</div>
+        <div class="value">{{parkingTime}}</div>
+    </div>
+</div>
+
+
+
+
+
+<div class="item">
+    <div class="content">
+        <div class="title">统计费用</div>
+        <div class="value red"><span class="yen">￥</span>{{payment}}</div>
+    </div>
+</div>
+
+
+<div class="item">
+    <div class="content">
+        <div class="title">用优惠券</div>
+        <div class="value green"><span class="minus">-</span><span class="yen">￥</span>{{coupon_amount}}</div>
+    </div>
+</div>
+
+<div class="item">
+    <div class="content">
+        <div class="title">支付金额</div>
+        <div class="value red bold"><span class="yen">￥</span>{{payment_total}}</div>
+    </div>
+</div>  
+
+
+
+
+
+   
+
+
+
+    
+<div class="tab">
+        <div class="tab-nav">
+            <div id="ControlTab0" class="tab-nav-button active">优惠卷</div>
+            <div id="ControlTab1" class="tab-nav-button ">已使用</div>
+        </div>
+        <div id="TabContent">
+            <div id='Tab0' style="display: block" class="tab">
+                <div class="ui cards" id="coupon-list-use">
+                </div>
+            </div>
+            <div id='Tab1' style="display: none" class="tab">
+                <div class="ui cards" id="coupon-list-history">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</h2>

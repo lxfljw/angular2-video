@@ -1,0 +1,242 @@
+
+.parking-taken, .parkingTaken {
+  fill:   #ff0000;
+}
+
+.parking-offence {
+  fill: #ffff00;
+
+}
+
+.parking-empty, .parkingEmpty {
+  fill:  #000000;
+}
+
+.parking-no-monitoring, .parkingNoMonitoring {
+  fill:   #00ff00;
+}
+
+.parking-in-violation, .parkingInViolation {
+  fill: #ff00bf;
+}
+
+.parking-will-violate, .parkingWillViolate {
+  fill: #0000ff;
+}
+
+svg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 600;
+}
+/*页面下面表格的样式*/
+
+path {
+  fill-opacity: .35;
+}
+
+.leaflet-zoom-hide path:hover {
+  fill-opacity: 1;
+  cursor: pointer;
+}
+
+/*页面表格下的中轴线的路径*/
+.axis path,
+/*页面表格下的中轴线的样式*/
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/*页面信息框内显示内容的样式*/
+.info-dark {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  /*页面信息框文本（非标题）的字体的颜色*/
+  color: #fff;
+}
+ /*页面信息框左边距*/
+.leaflet-left .leaflet-control  {
+    margin-left: 0;
+}
+/*页面信息框右边距*/
+.leaflet-right .leaflet-control  {
+    margin-right: 0;
+}
+/*页面信息框上边距*/
+.leaflet-top .leaflet-control  {
+    margin-top: 0;
+}
+
+/*页面表格下的内容的样式*/
+.info {
+  padding: 6px 8px;
+  font: 14px/16px Arial, Helvetica, sans-serif;
+  background: white;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 5px;
+}
+ /*页面信息框非标题的字体的样式*/
+.info-dark h4 {
+margin: 0 0 5px;
+color: #999;
+}
+
+.timestats h1, .timestats h2 {
+
+  text-align: center;
+
+}
+
+.timestats hr {
+  border-top: 1px solid #BDBDBD;
+}
+
+.time-control {
+  min-width:200px;
+}
+
+
+/* Slider  */
+/* 滑动按钮距离底部的距离  */
+.info.slider.leaflet-control {
+  margin-bottom: 20px;
+}
+.leaflet-bottom  {
+
+  width: 90%;
+  margin-left: 5%;
+
+}
+
+.slider.leaflet-control {
+  width: 100%;
+  margin-left: 0;
+}
+/* 图形显示图的高度和宽度  */
+.graph.leaflet-control {
+  width: 100%;
+  height: 150px;
+  margin-left: 0;
+}
+
+.day-graph-container {
+  height:100%;
+}
+
+.stats-grid {
+
+  width: 184px;
+  margin-top: 5px;
+
+}
+
+.stats {
+  float:right;
+  font-weight: bold;
+}
+
+.col-1-2 h4 {
+  text-align: center;
+}
+
+.menu-grid {
+
+  width: 100%;
+  font-size: 22px;
+
+}
+
+.violation {
+  color: #a94442;
+}
+
+.parking-info-list {
+    list-style-type: none;
+    padding:0;
+    margin:0 20px 20px 20px;
+}
+
+
+.time-controls-back {
+  font-size: 62.5%
+}
+
+
+.legend-item svg {
+    width: 10px;
+    height: 10px;
+}
+
+.loading {
+
+
+  z-index: 1
+;
+
+  opacity: .8;
+  background: #000;
+
+  display: table;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.clickable {
+  cursor: pointer;
+  color: #fff;
+}
+
+
+/* SpinKit | https://github.com/tobiasahlin/SpinKit  */
+.spinner {
+  margin: 100px auto 0;
+  width: 140px;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.spinner > div {
+  width: 36px;
+  height: 36px;
+  background-color: #EEE;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}

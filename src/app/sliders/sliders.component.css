@@ -1,0 +1,14 @@
+.info.slider.leaflet-control {
+  margin-bottom: 20px;
+}
+.leaflet-bottom  {
+
+  width: 90%;
+  margin-left: 5%;
+
+}
+
+.slider.leaflet-control {
+  width: 100%;
+  margin-left: 0;
+}

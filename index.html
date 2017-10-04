@@ -1,0 +1,8 @@
+<script src="socket.io.min.js"></script>
+<script>
+  var socket = io.connect('http://localhost:4000');
+  socket.on('new-data', function (data) {
+    console.log(data); 
+    socket.emit('message', { my: 'data' });
+  });
+</script>
