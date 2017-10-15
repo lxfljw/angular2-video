@@ -11,21 +11,26 @@ import { StatsComponent } from './stats/stats.component';
 import { SlidersComponent } from './sliders/sliders.component';
 import { AppComponent } from './app.component';
 import { BillingComponent } from './modules/billing/billing.component';
-import { HistoryComponent } from './modules/history/history.component';
-import { InfoComponent } from './modules/info/info.component';
-import { MapComponent } from './modules/map/map.component';
+//import { HistoryComponent } from './modules/history/history.component';
+import { ManagementComponent } from './modules/management/management.component';
 import { ParkingComponent } from './modules/parking/parking.component';
 
 
 const routes: Routes = [
-  	{ path: 'map1', component: MapsComponent ,},
-	{ path: 'homes', component: HomesComponent ,},
-	{ path: 'datas', component: DatasComponent  ,},
-	{ path: 'billing', component: BillingComponent,},
-    { path: 'history', component: HistoryComponent,},
-    { path: 'info', component: InfoComponent,},
-    { path: 'map', component: MapComponent,},
-    { path: 'parking', component: ParkingComponent,},
+  	 // { path: 'map1', component: MapsComponent ,},
+      
+	  //{ path: 'homes', component: HomesComponent ,},
+
+	 // { path: 'datas', component: DatasComponent  ,},
+
+	  //{ path: 'billing', component: BillingComponent,},
+      { path: 'billing', loadChildren: './modules/billing/billing.module#BillingModule' },
+
+      //{ path: 'management', component: ManagementComponent,},
+      { path: 'management', loadChildren: './modules/management/management.module#ManagementModule' },
+
+      //{ path: 'parking', component: ParkingComponent,},
+      { path: 'parking', loadChildren: './modules/parking/parking.module#ParkingModule' },
 ];
 
 @NgModule({
