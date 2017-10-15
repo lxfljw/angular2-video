@@ -15,11 +15,12 @@ export class BillingService
     private options = new RequestOptions({ headers: this.headers });
 
     constructor(private http: Http,) {}
-/*
-    startBilling(): Observable<any> {
+
+    startBilling(parking_id): Observable<any> {
         return this.http.post(environment.baseUrl+'/v1/parking/checkin',JSON.stringify(),this.options);
     }
-
+ 
+ /*
     stopBilling(): Observable<any> {
         return this.http.post(environment.baseUrl+'/v1/parking/checkout',JSON.stringify(),this.options);
    }

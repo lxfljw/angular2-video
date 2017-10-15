@@ -13,10 +13,13 @@ import { ParkingService} from './service/parking.service';
 export class ParkingComponent implements OnInit {
 
     user=1;
-    parking_id=2;
-    space_id=3;
-    price=1;
-
+    parking_id=3388;
+    space_id="A2";
+    prices=1015;
+    booking_id="A123";
+    a=1;
+    b=2;
+    c=3;
     constructor(
         private ParkingService: ParkingService,
         private formBuilder: FormBuilder,
@@ -24,34 +27,39 @@ export class ParkingComponent implements OnInit {
     ){}
 
     ngOnInit() {
-        this.test(this.parking_id);
-        this.getParkingInfo(this.parking_id,this.space_id);
-        this.getEvents(this.parking_id);
+/*      this.test(this.parking_id);
+        this.cancleReservation1(this.booking_id);
+        
+        this.reserveParking1(this.parking_id);
         this.searchParking1(this.price);
-        this.cancleReservation1(this.parking_id);
+        this.searchParking2(this.a,this.b,this.c);
+        this.getSpaceStatus(this.parking_id,this.space_id);
+        this.modifyThePrices(this.parking_id,this.prices);
+        this.updateSpaceIdStatus(this.parking_id,this.space_id);
+*/
+       
+        this.getEvents(this.parking_id);
         console.log('test message');   
     }
 
-    getParkingInfo(parking_id,space_id){
-    	  this.ParkingService.getParkingInfo(parking_id,space_id).subscribe(
+    getSpaceStatus(parking_id,space_id){
+    	  this.ParkingService.getSpaceStatus(parking_id,space_id).subscribe(
             res=>{console.log(res)},
-            error => { console.log(error)}
+            error => { 
+                console.log(error)
+            }
         );
     }
 
     getEvents(parking_id){
     	  this.ParkingService.getEvents(parking_id).subscribe(
             res=>{console.log(res)},
-            error => { console.log(error)}
+            error => {
+                 console.log(error)
+            }
         );
     }
 
-    test(parking_id){
-        this.ParkingService.test(parking_id).subscribe(
-            res=>{console.log(res)},
-            error => { console.log(error)}
-        );
-    }
 
     searchParking1(price){
         this.ParkingService.searchParkingByPrice(price).subscribe(
@@ -65,6 +73,20 @@ export class ParkingComponent implements OnInit {
         );
     }
 
+
+    searchParking2(lat,lng,radius){
+        this.ParkingService.searchParkingByLocation(lat,lng,radius).subscribe(
+            res=>{
+                console.log('search2')
+                console.log(res)
+            },
+            error => { 
+                console.log(error)
+            }
+        );
+    }
+
+
     cancleReservation1(booking_id){
         this.ParkingService.cancleReservation(booking_id).subscribe(
             res=>{
@@ -76,5 +98,42 @@ export class ParkingComponent implements OnInit {
             }
         );
     }
+
+    reserveParking1(parking_id){
+        this.ParkingService.reserveParking(parking_id).subscribe(
+            res=>{
+                console.log('4444')
+                console.log(res)
+            },
+            error => { 
+                console.log(error)
+            }
+        );
+    }
+
+    modifyThePrices(parking_id,prices){
+        this.ParkingService.modifyThePrices(parking_id,prices).subscribe(
+            res=>{
+                console.log('modify prices');
+                console.log(res);
+            },
+            error => { 
+                console.log(error)
+            }
+        );
+    }
+
+     updateSpaceIdStatus(parking_id,space_id){
+        this.ParkingService.updateSpaceIdStatus(parking_id,space_id).subscribe(
+            res=>{
+                console.log('updateSpaceIdStatus')
+                console.log(res)
+            },
+            error => { 
+                console.log(error)
+            }
+        );
+    }
+
 
 }
