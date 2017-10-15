@@ -14,13 +14,12 @@ export class ParkingService {
 
     constructor( private http: Http,) {}
   
-//============200=====================================================
+//============================200==================================
     getSpaceStatus(parking_id,space_id): Observable<any> {
         return this.http.get(environment.baseUrl+'/v1/parking/'+parking_id+'/'+space_id+'/any').map(res =>res.json());
     }
-//====================================================================
 
-//============200=====================================================
+
     searchParkingByLocation(lat,lng,radius): Observable<any> {
         var query = "?lat="+lat+"&lng="+lng+"&radius="+radius;
         return this.http.post(environment.baseUrl+'/v1/parking/search'+query,this.options);
@@ -30,40 +29,38 @@ export class ParkingService {
         var query = "?price="+price;
         return this.http.post(environment.baseUrl+'/v1/parking/search'+query,this.options);
     }
-//====================================================================
 
 
 
 
 // booking service
-//===============200=================================================
+
     reserveParking(parking_id): Observable<any> {
         var query = "?parking_id="+parking_id;
         return this.http.post(environment.baseUrl+'/v1/parking/reserve'+query,this.options);
     }
-//====================================================================    
+    
 
-//===============200=================================================
+
     cancleReservation(booking_id): Observable<any> {
         return this.http.put(environment.baseUrl+'/v1/parking/reservation/'+booking_id+'/cancel',this.options);
     }
-//====================================================================
 
 
 
-//===============200=================================================
+
     modifyThePrices(parking_id,prices): Observable<any> {
         return this.http.put(environment.baseUrl+'/v1/parking/'+parking_id+'/prices', this.options);
     }
-//====================================================================
+
 
   
-//===============200=================================================
+
     updateSpaceIdStatus(parking_id,space_id): Observable<any> {
         return this.http.put(environment.baseUrl+'/v1/parking/'+parking_id+space_id, this.options);
     }
-//====================================================================
-//===============200=================================================
+
+
     getEvents(parking_id): Observable<any> {
         return this.http.get(environment.baseUrl+'/v1/parking/'+parking_id+'/events').map(res =>res.json());
     }
