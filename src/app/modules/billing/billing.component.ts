@@ -8,31 +8,34 @@ import { BillingService} from './service/billing.service';
   templateUrl: './billing.component.html',
   styleUrls: ['./billing.component.scss'],
 })
-
+ 
 
 
 export class BillingComponent implements OnInit {
 
+    constructor(
+        private BillingService: BillingService,
+        private formBuilder: FormBuilder,
+        private http: Http
+    ){}
 
-  constructor(
-              private BillingService: BillingService,
-              private formBuilder: FormBuilder,
-              private http: Http
-              ) {}
+    ngOnInit() { 
 
-  ngOnInit() {
+      	this.getCoupons();
+        console.log('22222')
+      	console.log(this.getCoupons);
+      	console.log('test message');
+    }
 
-  	this.getCoupons();
-  	
-  	console.log(this.getCoupons);
-  	console.log('this.getCoupons');
-  }
-
-getCoupons(){
-	this.BillingService.getCoupons();
-  }
-
-
-
+    getCoupons(){
+      	this.BillingService.getCoupons().subscribe(
+            res=>{
+                console.log(res)
+            },
+            error => { 
+                console.log(error)
+            }
+        );
+    }
 
 }

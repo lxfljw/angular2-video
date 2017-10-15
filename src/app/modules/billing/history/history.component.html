@@ -1,0 +1,42 @@
+<p class="OwnerManage"><img src="image/mplatform_icon_currrent.png" class="homeImg"><span>主管理 / 停车记录</span></p>
+<section class="gatewaySetting">
+    <div class="row add-search">
+        <form class="col-xs-12">
+            <ul class="list-inline">
+                <li>
+                    <span>账号</span>
+                    <input type="text" ng-keyup="forsearch.searchPhone()" id="parkRe" autocomplete="off" ng-model="query">
+                    <div class="searchphone" ng-show="shown">
+
+                    </div>
+                </li>
+                <li>
+                    <span>开始时间</span>
+                    <input type="text" id="parkingStart" autocomplete="off">
+                </li>
+                <li>
+                    <span>结束时间</span>
+                    <input type="text" id="parkingEnd" autocomplete="off">
+                </li>
+                <li>
+                    <button class="btn btn-success" ng-click="search()"><span class="glyphicon glyphicon-search"></span> 查询</button>
+                </li>
+            </ul>
+        </form>
+    </div>
+  <div class="row">
+    <div class="col-xs-12 fee-box">
+        <div class="row auto-line">
+            <div class="col-1"><p>序号</p></div>
+            <div class="col-3"><p>账号</p></div>
+            <div class="col-4"><p>片区</p></div>
+            <div class="col-2"><p>车位ID</p></div>
+            <div class="col-4"><p>停入时间</p></div>
+            <div class="col-4"><p>驶出时间</p></div>
+            <div class="col-3"><p>停车时长</p></div>
+            <div class="col-3"><p>应缴停车费</p></div>
+            <div class="col-3"><p>实收停车费</p></div>
+        </div>
+    </div>
+   </div>
+</section>
