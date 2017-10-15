@@ -6,22 +6,21 @@ import { RouterModule, Routes } from '@angular/router';
 import { ParkingService } from './service/parking.service';
 
 
-
 let page = [
- ParkingComponent
+	ParkingComponent
 
 ];
 
 
 @NgModule({
-  declarations: [
-    ...page
-  ],
-  imports: [
+    declarations: [
+    	...page
+    ],
+    imports: [
  
-    CommonModule,
-    ParkingRoutes
-  ],
-  providers: [ ParkingService ]
+	    CommonModule,
+	    ParkingRoutes
+    ],
+    providers: [ ParkingService ]
 })
 export class ParkingModule { };

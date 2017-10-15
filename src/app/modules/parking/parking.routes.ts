@@ -4,16 +4,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { ParkingComponent } from './parking.component';
  
  const routes:Routes= [
-{
-	path: '',component: ParkingComponent,
-},
-                      ];
- 
+	{
+		path: '',component: ParkingComponent,
+	},
+];
+  
 
 export const ParkingRoutes: ModuleWithProviders = RouterModule.forChild(routes);
 @NgModule({
-  imports: [ RouterModule.forRoot(routes) ],
-  exports: [ RouterModule ]
+    imports: [ RouterModule.forRoot(routes) ],
+    exports: [ RouterModule ]
 })
 
 export class RoutingModule {}
