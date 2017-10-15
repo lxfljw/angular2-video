@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { UserService } from './services/user.service';
 import { DataService } from './services/data.service';
 //import { ParkingService } from './services/parking.service';
-//import { MapService } from './services/map.service';
+import { MapService } from './services/map.service';
 //import { Map1Service } from './services/map1.service';
 import { AuthService } from './services/auth.service';
 import { DatasComponent } from './datas/datas.component';
@@ -29,16 +29,17 @@ import { SlidersComponent } from './sliders/sliders.component';
 import { HomesComponent } from './homes/homes.component';
 import { StatsComponent } from './stats/stats.component';
 import { HttpModule} from '@angular/http';
+
+
+
 //import { LeafletModule } from '@asymmetrik/angular2-leaflet';
-import { BillingComponent } from './modules/billing/billing.component';
+//import { BillingComponent } from './modules/billing/billing.component';
 import { BillingService  } from './modules/billing/service/billing.service';
-import { HistoryComponent } from './modules/history/history.component';
-import { HistoryService  } from './modules/history/service/history.service';
-import { InfoComponent } from './modules/info/info.component';
-import { InfoService  } from './modules/info/service/info.service';
-import { MapComponent } from './modules/map/map.component';
-import { MapService  } from './modules/map/service/map.service';
-import { ParkingComponent } from './modules/parking/parking.component';
+//import { HistoryComponent } from './modules/history/history.component';
+//import { HistoryService  } from './modules/history/service/history.service';
+//import { ManagementComponent } from './modules/management/management.component';
+import { ManagementService  } from './modules/management/service/management.service';
+//import { ParkingComponent } from './modules/parking/parking.component';
 import { ParkingService  } from './modules/parking/service/parking.service';
 @NgModule({
   declarations: [
@@ -47,15 +48,14 @@ import { ParkingService  } from './modules/parking/service/parking.service';
     ParkingsComponent,
     MapsComponent,
     Map1sComponent,
-    InfosComponent,
+   // ManagementComponent,
     HomesComponent,
     StatsComponent,
     SlidersComponent,
-    BillingComponent,
-    HistoryComponent,
-    InfoComponent,
-    MapComponent,
-    ParkingComponent,
+    //BillingComponent,
+    //HistoryComponent,
+    //ManagementComponent,
+    //ParkingComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,9 +82,8 @@ import { ParkingService  } from './modules/parking/service/parking.service';
     MapService,
     //Map1Service
     BillingService,
-    HistoryService,
-    InfoService,
-    MapService,
+   // HistoryService,
+    ManagementService,
     ParkingService,
 
     ],
