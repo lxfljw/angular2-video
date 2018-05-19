@@ -4,7 +4,10 @@ import { ManagementRoutes } from './management.routes';
 import { RouterModule, Routes } from '@angular/router';
 import { ManagementComponent } from './management.component';
 import { ManagementService } from './service/management.service';
-
+import { ButtonModule }  from 'primeng/primeng';
+import { InputTextModule }  from 'primeng/primeng';
+import {AutoCompleteModule} from 'primeng/primeng';
+import {DropdownModule} from 'primeng/primeng';
 
 let page = [
 
@@ -17,11 +20,14 @@ let page = [
 	    ...page
 	],
 	imports: [
-	
+		InputTextModule,
+		DropdownModule,
+		ButtonModule,
 	    CommonModule,
-	    ManagementRoutes
+	    ManagementRoutes,
+	    AutoCompleteModule
 	],
 	providers: [ManagementService]
 })
 export class ManagementModule { };
- 
+  

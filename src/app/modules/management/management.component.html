@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	table{
+		background-color: skyblue;
+	/*	border: 1px solid #000;*/
+		color: white;
+	}
 
+</style>
+<body>
+
+<form action="/demo/demo_form.asp">
+查询条件：日期（例：2018_5_10）<br>
+<input type="text" name="" id="date" placeholder="please input a value" ng-model="date"><p-dropdown [options]="video"  placeholder="Download" (onChange)="getVideoInfo($event)"></p-dropdown>
+<br><br><br><br><br><br>
+<input type="text" name="" id="filename"  placeholder="please inut a fiename"><a id="abq" href="">download</a>
+
+</form> 
+
+
+<table border="3" width="500">
+	<thead>
+		<th>route</th>
+		<th>date</th>
+		<th>name</th>
+		<th>delete</th>
+	</thead>
+	<tbody></tbody>
+</table>
+
+
+
+</body>
+</html>
+
+	

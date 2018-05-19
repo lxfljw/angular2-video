@@ -7,6 +7,7 @@ const routes:Routes= [
 	{
 		path: '',component: ManagementComponent,
 	},
+	{ path: 'video', loadChildren: './modules/management/management.module#ManagementModule' },
 ];
  
 
@@ -18,4 +19,4 @@ export const ManagementRoutes: ModuleWithProviders = RouterModule.forChild(route
 
 })
 
-export class RoutingModule {}
+export class RoutingModule {}   
