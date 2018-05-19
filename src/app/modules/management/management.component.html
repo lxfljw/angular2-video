@@ -12,8 +12,12 @@
 
 <form action="/demo/demo_form.asp">
 查询条件：日期（例：2018_5_10）<br>
-<input type="text" name="" id="date" placeholder="please input a value" ng-model="date"><p-dropdown [options]="video"  placeholder="Download" (onChange)="getVideoInfo($event)"></p-dropdown>
+
+<input type="text" name="" id="date" placeholder="please input a value" ng-model="date">
+
+<button pButton type="button" label="Search" (click)="getVideoInfo($event)"></button>
 <br><br><br><br><br><br>
+
 <input type="text" name="" id="filename"  placeholder="please inut a fiename"><a id="abq" href="">download</a>
 
 </form> 
