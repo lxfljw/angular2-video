@@ -15,19 +15,27 @@ export class ManagementService {
 
     //Admin
     getUserHistory(user): Observable<any> {
-        return this.http.get(environment.baseUrl+' /v1/users/'+user+'/parking/history').map(res =>res.json());
+        return this.http.get(environment.baseUrl+'/v1/users/'+user+'/parking/history').map(res =>res.json());
+    }
+//--------------------------------------------------------------------------------------------
+    //========================================================================================
+    getUserInfo1(): Observable<any> {
+        let fileName = 'camera_13214_19.h264';
+        var query = '?fileName='+fileName;
+        console.log(fileName);
+        return this.http.get(environment.baseUrl+'/v1/getvideo'+query);
+
     }
 
-    //Admin
-    getUserInfo(user): Observable<any> {
-        return this.http.get(environment.baseUrl+' /v1/users/'+user+'/info').map(res =>res.json());
+    getVideoInfo(day):Observable<any>{
+        var query = '?timestamp='+day;
+        return this.http.get(environment.baseUrl+'/v1/getvideoinfo'+query);
     }
-
-
-/////////////////////////////////////////////////////////////////////////////
+//============================================================================================
+//--------------------------------------------------------------------------------------------
 
     //Owner
-    getParkingId(parking_id): Observable<any> {
+    getParkingId(parking_id): Observable<any> { 
         return this.http.get(environment.baseUrl+'/v1/parking/'+parking_id).map(res =>res.json());
     }
 
